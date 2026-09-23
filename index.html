@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-TW" xml:lang="zh-TW">
 <head>
+  <script>performance.mark("DOM-start");</script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>PageSpeed Insights</title>
@@ -14,8 +16,7 @@
   <link rel="preconnect" href="https://i.ibb.co">
 
   <!-- 2. preload (關鍵資源) -->
-  <link rel="preload" href="https://script.google.com/static/macros/client/css/2208734863-mae_html_css_ltr.css" as="style">
-  <link rel="preload" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png" as="image">
+  <link rel="preload" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png" as="image" fetchpriority=high>
 
   <!-- 3. prefetch (閒置下載) -->
   <link rel="prefetch" href="manifest.json">
@@ -26,6 +27,10 @@
   <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://script.google.com/static/macros/client/css/2208734863-mae_html_css_ltr.css">
+  
+  <link rel="preload" href="https://script.google.com/static/macros/client/css/2208734863-mae_html_css_ltr.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://script.google.com/static/macros/client/css/2208734863-mae_html_css_ltr.css"></noscript>
+  
   <link rel="canonical" href="https://www.bhg-delicious.abrdns.com/?utm_source=canonical">
   <link rel="alternate" type="application/rss+xml" title="訂閱 PageSpeed Insights" href="rss.xml">
 
@@ -182,6 +187,17 @@
     html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #ffffff; }
     iframe { width: 100%; height: 100%; border: none; display: block; }
     notBeSeen {height: 0; width: 0; display: none; visibility: hidden}
+    .animate {
+      animation: slide-in 0.7s both;
+    }
+    @keyframes slide-in {
+      0% {
+        transform: translateY(-1000px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -244,12 +260,162 @@
     </aside>
     <button title="buttom" role="button" style="color: black;">button</button>
   </main>
+  <div>
+    <div role="link" aria-label="Name"></div>
+    <div role="button" aria-labelledby="labeldiv"></div>
+    <div role="menuitem" aria-label="Aria Name">Name</div>
+    <div role="link" title="Title"></div>
+    <div role="dialog" aria-labelledby="labeldiv"></div>
+    <div role="alertdialog" aria-label="Aria Name">Name</div>
+    <div role="dialog" title="Title"></div>
+    <p aria-hidden="true" lang="en">Some text in aria-hidden.</p>
+
+    <!-- combobox -->
+    <div id="pass1" aria-label="country" role="combobox">England</div>
+    <!-- Select a color: -->
+    <p id="pass2Label">Select a color:</p>
+    <div id="pass2" role="listbox" aria-labelledby="pass2Label">
+        <div role="option">Orange</div>
+    </div>
+    <!-- searchbox -->
+    <p id="pass3Label">Search currency pairs:</p>
+    <div id="pass3"
+        role="searchbox"
+        contenteditable="true"
+        aria-labelledby="pass3Label"></div>
+    <!-- slider -->
+    <div id="pass4"
+        role="slider"
+        aria-label="Choose a value"
+        aria-valuemin="1"
+        aria-valuemax="7"
+        aria-valuenow="2"></div>
+    <!-- spinbutton -->
+    <div id="pass5"
+        role="spinbutton"
+        aria-valuemin="0"
+        aria-valuemax="10"
+        aria-valuenow="8"
+        aria-label="Enter quantity:"></div>
+    <!-- textbox -->
+    <label id="foo">
+        foo
+        <div id="pass6" role="textbox" aria-labelledby="foo"></div>
+    </label>
+    
+    <div role="meter" aria-labelledby="labeldiv"></div>
+    <div role="meter" aria-label="Aria Name">Name</div>
+    <div role="meter" title="Title"></div>
+    <div role="progressbar" aria-labelledby="labeldiv"></div>
+    <div role="progressbar" aria-label="Aria Name">Name</div>
+    <div role="progressbar" title="Title"></div>
+    <div role="menubar">
+      <div role="menuitem" tabindex="0">檔案</div>
+      <div role="menuitemcheckbox" tabindex="-1">編輯</div>
+      <div role="menuitemradio" tabindex="-1">檢視</div>
+    </div>
+    <div role="tablist" aria-label="會員中心">
+      <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">個人資料</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">帳戶設定</button>
+    </div>
+    <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+      個人資料內容
+    </div>
+    <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+      帳戶設定內容
+    </div>
+    <div role="radiogroup" aria-label="請選擇您的餐點大小">
+      <div role="radio" aria-checked="true" tabindex="0">大杯</div>
+      <div role="radio" aria-checked="false" tabindex="-1">中杯</div>
+      <div role="radio" aria-checked="false" tabindex="-1">小杯</div>
+    </div>
+    <div role="tree" aria-label="專案資料夾">
+      <div role="treeitem" aria-expanded="true">
+        原始碼
+        <div role="group">
+          <div role="treeitem" aria-label="Name">index.js</div>
+          <div role="treeitem" aria-label="Name">styles.css</div>
+        </div>
+      </div>
+    </div>
+    <div role="table" aria-label="學生點名表">
+      <div role="row">
+        <div role="columnheader">姓名</div>
+        <div role="columnheader">座號</div>
+      </div>
+      <div role="row">
+        <div role="cell">張小明</div>
+        <div role="cell">01</div>
+      </div>
+    </div>
+  </div>
+  <ul role="list">
+    <li role="listitem">項目一</li>
+  </ul>
+  <h1><span role="text">Hello <br/>World</span></h1>
   <footer role="contentinfo" title="footer">
     <div>This is the footer.</div>
   </footer>
   <a role="link" title="BHG-logo" href="https://bhg-delicious.github.io/Balance-Order-System/favicon.ico">
     <img alt="BHG-logo" title="BHG-logo" fetchpriority="high" width="100" height="100" src="https://i.ibb.co/1JJzGkTw/BHG-logo1.png"></img>
   </a><br>
+  <div role="checkbox">Newspaper</div>
+  <div role="tooltip" aria-label="Name"></div>
+  <dl>
+   <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+   <div>
+    <dt>Milk</dt>
+     <dd>White cold drink</dd>
+   </div>
+  </dl>
+  <form 
+    id="support-form" 
+    action="/support" 
+    toolname="create_support_request" 
+    tooldescription="提交客戶支援需求工單，協助使用者解決帳號或技術問題。">
+    
+    <label for="email">電子郵件</label>
+    <input type="email" id="email" name="email" required />
   
+    <label for="category">問題類型</label>
+    <select id="category" name="category">
+      <option value="billing">帳務問題</option>
+      <option value="technical">技術問題</option>
+      <option value="account">帳號問題</option>
+    </select>
+  
+    <label for="message">問題描述</label>
+    <textarea id="message" name="message" toolparamdescription="詳細說明遭遇的問題內容"></textarea>
+
+    <button type="submit">確認並送出</button>
+  </form>
+  
+  <script>
+    document.modelContext.registerTool({
+      name: "get_page_info",
+      description: "取得目前頁面的基本摘要資訊與標題",
+      parameters: {
+        type: "object",
+        properties: {
+          includeDetails: {
+            type: "boolean",
+            description: "是否包含詳細內容（預設為 false）"
+          }
+        }
+      },
+      // 當 AI 呼叫此工具時執行的函式
+      async execute({ includeDetails }) {
+        const title = document.title;
+        const content = includeDetails ? document.body.innerText : "僅提供標題摘要";
+        
+        return {
+          title,
+          summary: content.substring(0, 200)
+        };
+      }
+    });
+  </script>
+  <script>performance.mark("DOM-end");</script>
 </body>
 </html>
