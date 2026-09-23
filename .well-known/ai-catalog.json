@@ -1,0 +1,18 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "page-speed",
+    "documentationUrl": "https://gtes10301.github.io/page-speed/",
+    "logoUrl": "https://i.ibb.co/1JJzGkTw/BHG-logo1.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:gtes10301.github.io:server:page-speed",
+      "displayName": "page-speed",
+      "type": "application/mcp-server+json",
+      "url": "https://gtes10301.github.io/page-speed/",
+      "description": "為PageSpeed Insights設計的跑分專門網頁",
+      "updatedAt": "2026-09-23T05:47:36.857Z"
+    }
+  ]
+}
