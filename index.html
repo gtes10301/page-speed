@@ -240,25 +240,48 @@
     </script>
   </noscript>
 
-  <a href="#main" title="skip-link" role="link">skip to main</a>
   <header role="banner" title="header">
     <div>This is the header.</div>
   </header>
   <nav role="navigation" title="nav">
     <div>This is the navigation.</div>
   </nav>
-  <main role="main" id="main" title="main" accesskey="m">
+  <div title="a" accesskey="a">
+    <a href="#main" title="skip-link" role="link">skip to main</a>
+    The<abbr title="Big House Government" aria-label="Big House Government" role="text" >BHG</abbr>-delicious was founded in 2025.<br>
+    <address aria-label="作者聯絡資訊">
+    Written by <a href="https://github.com/gtes10301">gtes10301</a>.<br> 
+    Visit us at:<br>
+    https://gtes10301.github.io/page-speed/<br>
+    701臺南市東區成大里民族路一段1號<br>
+    Taiwan
+    </address>
+    <article role="article" title="article" aria-label="article">
+      <div>This is an article.</div>
+    </article>
+    <aside role="complementary" title="aside" aria-label="aside">
+      <div>This is an aside.</div>
+    </aside>
+    <audio controls title="audio" role="region" aria-label="audio">
+      <source src="audio.mp3" type="audio/mpeg">
+      您的浏览器不支持 audio 元素。
+    </audio>
+  </div>
+  <div title="b accesskey="b">
+    <b>This is b word.</b>
+    <bdi role="generic">這是一段反向文字</bdi>
+    <bdo dir="rtl">這也是一段反向文字</bdo>
+    <blockquote role="blockquote" cite="https://www.bhg-delicious.abrdns.com/">
+      這是一個長引用
+    </blockquote>
+    <br>
+    <button title="buttom" role="button" aria-pressed="mixed">button</button>
+  </div>
+  <main role="main" id="main" title="main">
     <div>This is the main content.</div>
     <section role="region" title="section" aria-label="產品介紹" aria-labelledby="news-heading>
       <div>This is a section.</div>
     </section>
-    <article role="article" title="article">
-      <div>This is an article.</div>
-    </article>
-    <aside role="complementary" title="aside">
-      <div>This is an aside.</div>
-    </aside>
-    <button title="buttom" role="button">button</button>
   </main>
   <div>
     <div role="link" aria-label="Name"></div>
@@ -356,9 +379,15 @@
   <footer role="contentinfo" title="footer">
     <div>This is the footer.</div>
   </footer>
-  <a role="link" title="BHG-logo" href="https://bhg-delicious.github.io/Balance-Order-System/favicon.ico">
-    <img alt="BHG-logo" title="BHG-logo" fetchpriority="high" width="100" height="100" src="https://i.ibb.co/1JJzGkTw/BHG-logo1.png"></img>
-  </a><br>
+  <div title="img">
+    <a role="link" title="BHG-logo" href="https://bhg-delicious.github.io/Balance-Order-System/favicon.ico">
+      <img alt="BHG-logo" title="BHG-logo" fetchpriority="high" usemap="#logomap" width="100" height="100" src="https://i.ibb.co/1JJzGkTw/BHG-logo1.png"></img>
+    </a>
+    <map name="logomap" role="img" aria-label="map">
+      <area shape="rect" coords="0,0,50,100" alt="a" aria-label="a" role="link" href="#">
+    </map>
+  </div>
+  
   <div role="checkbox">Newspaper</div>
   <div role="tooltip" aria-label="Name"></div>
   <dl>
