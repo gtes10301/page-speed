@@ -14,21 +14,20 @@
   <!-- 1. preconnect (優先級最高) -->
   <link rel="preconnect" href="https://script.google.com" crossorigin>
   <link rel="preconnect" href="https://i.ibb.co">
+  <link rel="preconnect" href="https://www.gstatic.com">
 
   <!-- 2. preload (關鍵資源) -->
   <link rel="preload" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png" as="image" fetchpriority=high>
+  <link rel="preload" href="https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png" as="image" fetchpriority=high>
 
   <!-- 3. prefetch (閒置下載) -->
   <link rel="prefetch" href="manifest.json">
   
-  <link rel="icon" type="image/png" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png">
-  <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png">
-  <link rel="apple-touch-icon" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png">
-  <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/1JJzGkTw/BHG-logo1.png">
+  <link rel="icon" type="image/png" href="https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png">
+  <link rel="shortcut icon" type="image/png" href="https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png">
+  <link rel="apple-touch-icon" href="https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png">
+  <link rel="apple-touch-icon-precomposed" href="https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png">
   <link rel="manifest" href="manifest.json">
-  
-  <link rel="preload" href="https://script.google.com/static/macros/client/css/2208734863-mae_html_css_ltr.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://script.google.com/static/macros/client/css/2208734863-mae_html_css_ltr.css"></noscript>
   
   <link rel="canonical" href="https://www.bhg-delicious.abrdns.com/?utm_source=canonical">
   <link rel="alternate" type="application/rss+xml" title="訂閱 PageSpeed Insights" href="rss.xml">
@@ -202,6 +201,17 @@
       }
     }
     button { color: black; }
+    .warning-bar{background-color:#eee;width:100%}
+    .warning-banner-bar{background-color:#e8f0fe;border-bottom:1px solid #ccc;display:-webkit-box;display:-webkit-flex;display:flex;max-height:20vh;overflow:hidden;padding:10px 0;-webkit-transition:max-height .25s linear,padding .25s ease-in,visibility .5s linear;transition:max-height .25s linear,padding .25s ease-in,visibility .5s linear;width:100%}
+    .warning-banner-bar-hidden{max-height:0;padding:0;visibility:hidden}
+    .warning-banner{color:#202124;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-flex:1;-webkit-flex:1 1 0%;flex:1 1 0%;-webkit-flex-wrap:wrap;flex-wrap:wrap;font-family:Google Sans,Roboto,Helvetica,Arial,sans-serif;font-size:14px;-webkit-box-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end;row-gap:10px}
+    .warning-banner-header{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-flex:1;-webkit-flex-grow:1;flex-grow:1}
+    .warning-banner-icon{display:-webkit-box;display:-webkit-flex;display:flex;fill:#1967d2;margin:auto 10px;padding:0 10px}
+    .warning-banner-text{display:-webkit-box;display:-webkit-flex;display:flex;margin:auto 0}
+    .warning-banner-buttons{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex}
+    .warning-link{text-decoration:underline}
+    .warning-banner-close-icon{display:-webkit-box;display:-webkit-flex;display:flex;fill:#1967d2;margin:0 10px auto}
+    .warning-banner-close-icon:hover{background-color:rgba(0,0,0,.12)}
   </style>
 </head>
 <body>
