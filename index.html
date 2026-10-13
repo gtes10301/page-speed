@@ -245,7 +245,6 @@
         </div>
       </div>
     </td></tr></tbody></table>
-    <iframe allow="clipboard-read; clipboard-write" src="https://script.google.com/macros/s/AKfycby8avMBWXM4N6XRRFcj2cgWffaRv7ReCc_4IrjrrQ1_OqjEMHxPYqpfrB_asWGKnUFCOg/exec?utm_source=noscript&utm_medium=github&utm_campaign=balance-order-system"></iframe>
     <script>
       document.getElementById('warning-link').addEventListener('click', function(event) {
         event.preventDefault(); // 阻止 <a> 預設的跳轉或錨點行為
@@ -260,7 +259,7 @@
   <nav role="navigation" title="nav">
     <div>This is the navigation.</div>
   </nav>
-  <div title="a" accesskey="a">
+  <div title="A" id="A" accesskey="A">
     <a href="#main" title="skip-link" role="link">skip to main</a>
     The<abbr title="Big House Government" aria-label="Big House Government" role="text" >BHG</abbr>-delicious was founded in 2025.<br>
     <address aria-label="作者聯絡資訊">
@@ -281,7 +280,7 @@
       您的浏览器不支持 audio 元素。
     </audio>
   </div>
-  <div title="b accesskey="b">
+  <div title="B" id="B" accesskey="B">
     <b>This is b word.</b>
     <bdi role="generic">這是一段反向文字</bdi>
     <bdo dir="rtl">這也是一段反向文字</bdo>
@@ -290,6 +289,22 @@
     </blockquote>
     <br>
     <button title="buttom" role="button" aria-pressed="mixed">button</button>
+  </div>
+  <div title="C" id="C" accesskey="C">
+    <canvas id="Canvas" width="100" height="100">
+      您的瀏覽器不支援 Canvas 標籤，請升級瀏覽器。
+    </canvas>
+    <script>
+      const canvas = document.getElementById('Canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.src = 'https://i.ibb.co/1JJzGkTw/BHG-logo1.png';
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, 100, 100); // 參數：(圖片物件, x, y, 寬, 高)
+      };
+    </script>
+    <p>caption</p>
+    <p><cite>Mein Kampf</cite> by Adolf Hitler. Painted in 1925.</p>
   </div>
   <main role="main" id="main" title="main">
     <div>This is the main content.</div>
